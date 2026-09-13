@@ -3,107 +3,484 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lord VPN</title>
+  <meta name="theme-color" content="#12091f">
+  <meta
+    name="description"
+    content="Invoke VPS — быстрый, приватный и безопасный сервис доступа к серверам."
+  >
+  <title>Invoke VPS — Свобода в сети</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      color: #f4f7fb;
-      font-family: Arial, sans-serif;
-      background:
-        radial-gradient(circle at top left, #263e71 0, transparent 38%),
-        linear-gradient(135deg, #090d18, #111827);
-    }
-
-    .card {
-      width: 100%;
-      max-width: 620px;
-      padding: 36px;
-      text-align: center;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 24px;
-      background: rgba(18, 25, 43, 0.88);
-      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.35);
-    }
-
-    .logo {
-      width: 76px;
-      height: 76px;
-      margin: 0 auto 20px;
-      display: grid;
-      place-items: center;
-      border-radius: 22px;
-      font-size: 36px;
-      background: linear-gradient(135deg, #4f8cff, #7c4dff);
-    }
-
-    h1 {
-      margin: 0 0 12px;
-      font-size: 34px;
-    }
-
-    p {
-      margin: 0 auto 26px;
-      max-width: 470px;
-      color: #b7c1d6;
-      line-height: 1.6;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 14px 24px;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 12px;
-      background: #3978ff;
-      transition: 0.2s;
-    }
-
-    .button:hover {
-      background: #5b91ff;
-      transform: translateY(-2px);
-    }
-
-    .info {
-      margin-top: 28px;
-      padding: 16px;
-      color: #9eabc4;
-      font-size: 14px;
-      line-height: 1.5;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.06);
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
 </head>
 
 <body>
-  <main class="card">
-    <div class="logo">⚡</div>
+  <div class="page-loader" id="pageLoader" aria-label="Загрузка сайта">
+    <div class="loader-glow glow-one"></div>
+    <div class="loader-glow glow-two"></div>
 
-    <h1>Lord VPN</h1>
+    <div class="loader-content">
+      <div class="loader-mark">
+        <span class="loader-ring"></span>
 
-    <p>
-      Быстрое и удобное подключение к VPN-серверам.
-      Используйте ссылку подписки в приложении Happ.
-    </p>
+        <span class="loader-logo-wrapper">
+          <img
+            class="site-logo loader-logo"
+            src="assets/png/logo.jpg"
+            alt="Invoke VPS"
+          >
+        </span>
+      </div>
 
-    <a class="button" href="https://t.me/xokeza" target="_blank">
-      Поддержка в Telegram
-    </a>
+      <p class="loader-title">
+        INVOKE <span>VPS</span>
+      </p>
 
-    <div class="info">
-      Подписка автоматически обновляется через приложение Happ.
+      <div class="loader-line">
+        <span></span>
+      </div>
+
+      <p class="loader-text">
+      </p>
     </div>
-  </main>
+
+    <div class="loader-petal petal-a"></div>
+    <div class="loader-petal petal-b"></div>
+    <div class="loader-petal petal-c"></div>
+  </div>
+
+  <div class="site-shell">
+    <header class="header container">
+      <a class="brand" href="index.html" aria-label="Invoke VPS — главная">
+        <span class="brand-icon">
+          <img
+            class="site-logo"
+            src="assets/png/logo.jpg"
+            alt=""
+          >
+        </span>
+
+        <span>
+          INVOKE <b>VPS</b>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#advantages">Преимущества</a>
+        <a href="#how-it-works">Как это работает</a>
+        <a href="#plans">Тарифы</a>
+      </nav>
+
+      <a class="header-action" href="connection/index.html">
+        Подключиться
+        <span aria-hidden="true">→</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            ЗАЩИЩЁННОЕ СОЕДИНЕНИЕ
+          </div>
+
+          <h1>
+            Свобода сети.<br>
+            <span>Тишина внутри.</span>
+          </h1>
+
+          <p class="hero-description">
+            Invoke VPS помогает получить быстрый и стабильный доступ к сети,
+            защищает ваше соединение и открывает интернет без лишних ограничений.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="connection/index.html">
+              Начать подключение
+              <span class="button-arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a class="button button-ghost" href="#advantages">
+              Узнать больше
+            </a>
+          </div>
+
+          <div class="trust-row">
+            <div class="trust-item">
+              <span class="trust-icon">
+                <img
+                  src="assets/icons/shield.svg"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </span>
+
+              <span>
+                <b>Защита данных</b>
+                <small>Надёжное соединение</small>
+              </span>
+            </div>
+
+            <div class="trust-divider"></div>
+
+            <div class="trust-item">
+              <span class="trust-icon">
+                <img
+                  src="assets/icons/privacy.svg"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </span>
+
+              <span>
+                <b>Без логов</b>
+                <small>Только ваша приватность</small>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="ambient-orb orb-large"></div>
+          <div class="ambient-orb orb-small"></div>
+
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+
+          <div class="sakura-branch branch-one">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+
+          <div class="sakura-branch branch-two">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+
+          <div class="shield-card">
+            <div class="shield-pulse pulse-one"></div>
+            <div class="shield-pulse pulse-two"></div>
+
+            <div class="central-shield">
+              <img
+                src="assets/icons/online.png"
+                alt=""
+              >
+            </div>
+
+            <span class="status-dot"></span>
+
+            <p>VPS активен</p>
+            <small>Ваше соединение защищено</small>
+          </div>
+
+          <div class="floating-card location-card">
+            <span class="mini-icon">
+              <img
+                src="assets/icons/location.svg"
+                alt=""
+              >
+            </span>
+
+            <span>
+              <b>Германия</b>
+              <small>Оптимальный сервер</small>
+            </span>
+          </div>
+
+          <div class="floating-card speed-card">
+            <span class="mini-icon">
+              <img
+                src="assets/icons/speed.png"
+                alt=""
+              >
+            </span>
+
+            <span>
+              <b>1 Гбит/с</b>
+              <small>Высокая скорость</small>
+            </span>
+          </div>
+
+          <div class="petal petal-1"></div>
+          <div class="petal petal-2"></div>
+          <div class="petal petal-3"></div>
+          <div class="petal petal-4"></div>
+          <div class="petal petal-5"></div>
+        </div>
+      </section>
+
+      <section class="metrics container" aria-label="Статистика Invoke VPS">
+        <div class="metric">
+          <strong>99.9%</strong>
+          <span>Время доступности</span>
+        </div>
+
+        <div class="metric">
+          <strong>50+</strong>
+          <span>Серверов по миру</span>
+        </div>
+
+        <div class="metric">
+          <strong>24/7</strong>
+          <span>Поддержка рядом</span>
+        </div>
+
+        <div class="metric">
+          <strong>0</strong>
+          <span>Сохранённых логов</span>
+        </div>
+      </section>
+
+      <section class="advantages container" id="advantages">
+        <div class="section-heading">
+          <span class="section-label">ВОЗМОЖНОСТИ</span>
+
+          <h2>
+            VPS, который работает<br>
+            <span>для вас</span>
+          </h2>
+
+          <p>
+            Всё необходимое для спокойного, быстрого и приватного интернета —
+            без сложных настроек.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card feature-card-wide">
+            <span class="feature-icon icon-pink">
+              <img
+                src="assets/icons/security.png"
+                alt=""
+              >
+            </span>
+
+            <h3>Полная приватность</h3>
+
+            <p>
+              Мы не отслеживаем действия и не храним журналы подключений.
+            </p>
+
+            <span class="card-art card-art-shield"></span>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-icon icon-purple">
+              <img
+                src="assets/icons/speed.png"
+                alt=""
+              >
+            </span>
+
+            <h3>Максимальная скорость</h3>
+
+            <p>
+              Стабильные серверы для игр, стриминга, учёбы и работы.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-icon icon-blue">
+              <img
+                src="assets/icons/devices.png"
+                alt=""
+              >
+            </span>
+
+            <h3>Все устройства</h3>
+
+            <p>
+              Телефон, ПК или браузер — подключайтесь там, где удобно.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="how-it-works container" id="how-it-works">
+        <div class="how-panel">
+          <div class="how-copy">
+            <span class="section-label">ТРИ ПРОСТЫХ ШАГА</span>
+
+            <h2>
+              Подключение<br>
+              <span>за минуту</span>
+            </h2>
+
+            <p>
+              Никаких сложных технических настроек. Выберите подписку,
+              получите данные и начните пользоваться сервисом.
+            </p>
+
+            <a class="text-link" href="connection/index.html">
+              Перейти к подключению
+              <span>→</span>
+            </a>
+          </div>
+
+          <ol class="steps">
+            <li>
+              <span class="step-number">01</span>
+
+              <span>
+                <b>Выберите подписку</b>
+                <small>Подходящий срок использования</small>
+              </span>
+            </li>
+
+            <li>
+              <span class="step-number">02</span>
+
+              <span>
+                <b>Получите доступ</b>
+                <small>Данные придут сразу после оплаты</small>
+              </span>
+            </li>
+
+            <li>
+              <span class="step-number">03</span>
+
+              <span>
+                <b>Настройте подключение</b>
+                <small>Следуйте простой инструкции для устройства</small>
+              </span>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="plans container" id="plans">
+        <div class="section-heading centered">
+          <span class="section-label">ПРОСТО И ПРОЗРАЧНО</span>
+
+          <h2>
+            Выберите свой <span>ритм</span>
+          </h2>
+        </div>
+
+        <div class="plan-grid">
+          <article class="plan-card">
+            <h3>1 день</h3>
+
+            <p class="plan-note">
+              Для быстрого доступа
+            </p>
+
+            <div class="price">
+              19 <span>₽ / день</span>
+            </div>
+
+            <a href="connection/index.html?plan=day" class="plan-button">
+              Выбрать
+            </a>
+          </article>
+
+          <article class="plan-card">
+            <h3>Месяц</h3>
+
+            <p class="plan-note">
+              Для знакомства с сервисом
+            </p>
+
+            <div class="price">
+              129 <span>₽ / мес.</span>
+            </div>
+
+            <a href="connection/index.html?plan=month" class="plan-button">
+              Выбрать
+            </a>
+          </article>
+
+          <article class="plan-card">
+            <h3>3 месяца</h3>
+
+            <p class="plan-note">
+              Удобный выбор на сезон
+            </p>
+
+            <div class="price">
+              249 <span>₽ / 3 мес.</span>
+            </div>
+
+            <a href="connection/index.html?plan=three-months" class="plan-button">
+              Выбрать
+            </a>
+          </article>
+
+          <article class="plan-card">
+            <h3>6 месяцев</h3>
+
+            <p class="plan-note">
+              Больше свободы по выгодной цене
+            </p>
+
+            <div class="price">
+              399 <span>₽ / 6 мес.</span>
+            </div>
+
+            <a href="connection/index.html?plan=six-months" class="plan-button">
+              Выбрать
+            </a>
+          </article>
+
+          <article class="plan-card featured">
+            <span class="plan-badge">ВЫГОДНО</span>
+
+            <h3>Год</h3>
+
+            <p class="plan-note">
+              Лучшая цена — 58,25 ₽ в месяц
+            </p>
+
+            <div class="price">
+              699 <span>₽ / год</span>
+            </div>
+
+            <a href="connection/index.html?plan=year" class="plan-button">
+              Выбрать
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <a class="brand" href="index.html" aria-label="Invoke VPS — главная">
+        <span class="brand-icon">
+          <img
+            class="site-logo"
+            src="assets/png/logo.jpg"
+            alt=""
+          >
+        </span>
+
+        <span>
+          INVOKE <b>VPS</b>
+        </span>
+      </a>
+
+      <p>
+        © 2026 Invoke VPS. Интернет без границ.
+      </p>
+
+      <a href="connection/index.html">
+        Подключиться →
+      </a>
+    </footer>
+  </div>
 </body>
 </html>

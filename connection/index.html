@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#12091f">
+  <title>Подключение — Invoke VPN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .connection-page { min-height: 100vh; display: flex; flex-direction: column; }
+    .connection-main { flex: 1; display: grid; place-items: center; padding: 45px 0 85px; }
+    .connection-card { width: min(650px, 100%); position: relative; overflow: hidden; padding: 48px; border: 1px solid rgba(255,255,255,.13); border-radius: 28px; background: radial-gradient(circle at 88% 8%, rgba(236,100,185,.25), transparent 13rem), linear-gradient(135deg, rgba(67,32,91,.76), rgba(19,9,31,.89)); box-shadow: 0 25px 70px rgba(0,0,0,.36); }
+    .connection-card::after { content: ""; position: absolute; width: 220px; height: 220px; bottom: -130px; left: -70px; border: 1px solid rgba(244,129,205,.25); border-radius: 50%; }
+    .back-link { display: inline-flex; align-items: center; gap: 9px; color: #c9a1cf; font-size: 11px; }.back-link:hover { color: #fff; }
+    .connection-card h1 { margin: 28px 0 12px; font-size: clamp(31px, 5vw, 45px); }.connection-card > p { max-width: 470px; color: #b3a2bd; font-size: 12px; line-height: 1.7; }
+    .connection-form { position: relative; z-index: 1; display: grid; gap: 15px; margin-top: 30px; }.connection-form label { display: grid; gap: 8px; color: #d9cadf; font-size: 10px; font-weight: 700; }.connection-form input, .connection-form select { width: 100%; min-height: 49px; padding: 0 15px; outline: none; border: 1px solid rgba(255,255,255,.13); border-radius: 10px; color: #eee5f2; background: rgba(10,4,17,.35); font-size: 12px; }.connection-form input:focus, .connection-form select:focus { border-color: rgba(244,113,193,.75); box-shadow: 0 0 0 3px rgba(244,113,193,.09); }.connection-form select option { color: #fff; background: #281338; }.connection-form button { border: 0; cursor: pointer; margin-top: 5px; }.form-message { display: none; color: #9cf0bf; font-size: 10px; }.form-message.visible { display: block; }
+  </style>
+</head>
+<body>
+  <div class="connection-page">
+    <header class="header container">
+      <a class="brand" href="../index.html" aria-label="Invoke VPN — главная">
+        <span class="brand-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 20 5.8v5.85c0 5.1-3.15 9.53-8 11.35-4.85-1.82-8-6.25-8-11.35V5.8l8-3.3Zm0 3.18L7 7.73v3.92c0 3.55 2.05 6.75 5 8.12 2.95-1.37 5-4.57 5-8.12V7.73l-5-2.05Z"/></svg></span>
+        <span>INVOKE <b>VPN</b></span>
+      </a>
+      <a class="header-action" href="../index.html">← На главную</a>
+    </header>
+
+    <main class="connection-main container">
+      <section class="connection-card">
+        <a class="back-link" href="../index.html">← Вернуться на главную</a>
+        <div class="eyebrow"><span class="eyebrow-dot"></span> БЫСТРОЕ ПОДКЛЮЧЕНИЕ</div>
+        <h1>Начните с <span>Invoke VPN</span></h1>
+        <p>Оставьте контакт для получения инструкции. Здесь подключите ваш API, Telegram-бота или форму оплаты.</p>
+        <form class="connection-form" id="connectionForm">
+          <label>Ваш Telegram или email<input type="text" name="contact" placeholder="@username или example@mail.com" required></label>
+          <label>Выберите тариф<select name="plan"><option value="month">1 месяц — 199 ₽</option><option value="six-months">6 месяцев — 149 ₽ / мес.</option><option value="year">1 год — 119 ₽ / мес.</option></select></label>
+          <button class="button button-primary" type="submit">Продолжить <span class="button-arrow">→</span></button>
+          <p class="form-message" id="formMessage">Заявка подготовлена. Подключите обработчик формы в js/app.js.</p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer container"><p>© 2026 Invoke VPN. Интернет без границ.</p></footer>
+  </div>
+  <script>
+    document.getElementById('connectionForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      document.getElementById('formMessage').classList.add('visible');
+    });
+  </script>
+</body>
+</html>
