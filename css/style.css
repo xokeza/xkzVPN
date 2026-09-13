@@ -1662,3 +1662,365 @@ h2 span {
     grid-template-columns: 1fr;
   }
 }
+
+.connection-page {
+  min-height: 100vh;
+}
+
+.connection-main {
+  display: grid;
+  flex: 1;
+  place-items: center;
+  padding: 38px 0 90px;
+}
+
+.connection-card-wide {
+  width: min(860px, 100%);
+}
+
+.connection-description {
+  max-width: 620px;
+  color: #b3a2bd;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.connect-step {
+  margin-top: 35px;
+}
+
+.connect-step-heading {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.connect-step-heading > span {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(239, 105, 188, 0.35);
+  border-radius: 9px;
+  color: #ff9dd8;
+  background: rgba(239, 105, 188, 0.1);
+  font-size: 10px;
+  font-weight: 700;
+  place-items: center;
+}
+
+.connect-step-heading h2 {
+  margin: 0;
+  color: #f8effb;
+  font-size: 16px;
+}
+
+.choice-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.device-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.client-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.choice-card {
+  display: flex;
+  min-height: 145px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 19px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 17px;
+  color: #eee3f2;
+  background: rgba(42, 19, 57, 0.58);
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+}
+
+.choice-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(239, 105, 188, 0.45);
+  background: rgba(76, 34, 86, 0.58);
+}
+
+.choice-card.is-selected {
+  border-color: rgba(239, 105, 188, 0.72);
+  background: linear-gradient(145deg, rgba(142, 54, 127, 0.48), rgba(48, 22, 68, 0.75));
+  box-shadow: 0 13px 30px rgba(226, 78, 175, 0.14);
+}
+
+.choice-icon,
+.choice-logo {
+  display: grid;
+  width: 47px;
+  height: 47px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  place-items: center;
+}
+
+.choice-logo {
+  overflow: hidden;
+  padding: 9px;
+}
+
+.choice-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.choice-card strong {
+  font-size: 12px;
+}
+
+.choice-card small {
+  margin-top: 6px;
+  color: #9e8daa;
+  font-size: 8px;
+  line-height: 1.5;
+}
+
+.device-symbol {
+  color: #f3eaf5;
+  font-family: Arial, sans-serif;
+  font-size: 27px;
+  line-height: 1;
+}
+
+.windows-symbol {
+  color: #62a8ff;
+  font-size: 31px;
+}
+
+.android-symbol {
+  position: relative;
+  width: 21px;
+  height: 21px;
+  border: 2px solid #76da8f;
+  border-radius: 7px 7px 5px 5px;
+  color: #76da8f;
+  font-size: 0;
+}
+
+.android-symbol::before,
+.android-symbol::after {
+  position: absolute;
+  top: -5px;
+  width: 7px;
+  height: 2px;
+  border-radius: 2px;
+  background: #76da8f;
+  content: "";
+}
+
+.android-symbol::before {
+  left: 1px;
+  transform: rotate(-55deg);
+}
+
+.android-symbol::after {
+  right: 1px;
+  transform: rotate(55deg);
+}
+
+.connect-submit {
+  width: 100%;
+  margin-top: 32px;
+  border: 0;
+  cursor: pointer;
+}
+
+.connect-submit:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.connect-submit.is-loading {
+  animation: button-pulse 1s ease-in-out infinite alternate;
+}
+
+.connect-status {
+  min-height: 18px;
+  margin-top: 14px;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.connect-status.is-visible {
+  color: #c5b5ce;
+}
+
+.connect-status.is-success {
+  color: #8fe8b1;
+}
+
+.connect-status.is-error {
+  color: #ff9aaf;
+}
+
+.connection-result {
+  display: none;
+  margin-top: 22px;
+  padding: 21px;
+  border: 1px solid rgba(109, 231, 159, 0.24);
+  border-radius: 17px;
+  background: linear-gradient(135deg, rgba(55, 104, 78, 0.17), rgba(43, 22, 62, 0.45));
+}
+
+.connection-result.is-visible {
+  display: block;
+  animation: result-show 0.35s ease both;
+}
+
+.result-heading {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+}
+
+.result-status {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #76e9a1;
+  box-shadow: 0 0 12px rgba(118, 233, 161, 0.75);
+}
+
+.result-heading strong,
+.result-heading small {
+  display: block;
+}
+
+.result-heading strong {
+  font-size: 12px;
+}
+
+.result-heading small {
+  margin-top: 5px;
+  color: #9cae9f;
+  font-size: 8px;
+}
+
+.result-import-button {
+  display: flex;
+  min-height: 43px;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  border-radius: 10px;
+  color: #fff;
+  background: linear-gradient(105deg, #c848a1, #ed6cbb 52%, #b158d2);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.result-import-button span {
+  font-size: 17px;
+}
+
+.result-url-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.result-url-row input {
+  min-width: 0;
+  flex: 1;
+  height: 40px;
+  padding: 0 11px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9px;
+  outline: none;
+  color: #cbbbd1;
+  background: rgba(9, 4, 15, 0.42);
+  font-size: 9px;
+}
+
+.result-url-row button {
+  min-width: 92px;
+  border: 1px solid rgba(239, 105, 188, 0.35);
+  border-radius: 9px;
+  color: #ffd9ed;
+  background: rgba(239, 105, 188, 0.12);
+  cursor: pointer;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.result-url-row button:hover {
+  background: rgba(239, 105, 188, 0.23);
+}
+
+.result-note {
+  margin: 13px 0 0;
+  color: #978ba0;
+  font-size: 9px;
+  line-height: 1.65;
+}
+
+@keyframes button-pulse {
+  from {
+    box-shadow: 0 15px 35px rgba(233, 82, 176, 0.28);
+  }
+
+  to {
+    box-shadow: 0 15px 50px rgba(233, 82, 176, 0.62);
+  }
+}
+
+@keyframes result-show {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 680px) {
+  .connection-main {
+    padding: 22px 0 65px;
+  }
+
+  .connection-card-wide {
+    padding: 30px 23px;
+  }
+
+  .device-grid,
+  .client-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .choice-card {
+    min-height: 112px;
+  }
+
+  .choice-icon,
+  .choice-logo {
+    margin-bottom: 13px;
+  }
+}
+
+@media (max-width: 430px) {
+  .result-url-row {
+    flex-direction: column;
+  }
+
+  .result-url-row button {
+    min-height: 40px;
+  }
+}
